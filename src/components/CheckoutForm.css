@@ -225,3 +225,7 @@ img {
   width: 50%;
   height: auto;
 }
+.info-container{
+  background-color: #6fe475;
+  width: 100%;
+}

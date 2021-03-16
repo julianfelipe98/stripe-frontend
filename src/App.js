@@ -21,11 +21,13 @@ const ELEMENTS_OPTIONS = {
 };
 const App = () => {
   return (
+    <>
     <div className="AppWrapper">
       <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
         <CheckoutForm />
       </Elements>
     </div>
+    </>
   );
 };
 

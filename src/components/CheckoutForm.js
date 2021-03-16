@@ -96,6 +96,7 @@ const ResetButton = ({ onClick }) => (
     </svg>
   </button>
 );
+
 export const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
@@ -118,18 +119,15 @@ export const CheckoutForm = () => {
       return;
     }
 
-
     if (cardComplete) {
       setProcessing(true);
     }
 
-    const {error,paymentMethod} = await stripe.createPaymentMethod({
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
       billing_details: billingDetails,
     });
-
-    
 
     if (error) {
       setError(error);
@@ -144,11 +142,14 @@ export const CheckoutForm = () => {
           }
         );
         console.log(data);
+        setPaymentMethod(paymentMethod);
         setProcessing(false);
       } catch (error) {
+        console.log("in error");
+        setError(error);
         console.log(error);
+        setProcessing(false);
       }
-      setPaymentMethod(paymentMethod);
     }
   };
 
