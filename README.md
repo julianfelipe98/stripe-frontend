@@ -12,6 +12,7 @@ Para hacer uso de stripe ofrece unos datos de prueba:
     
     - 4242 4242 4242 4242 . Cualquier fecha de expiración en el futuro , CVC de 3 dígitos son válidos y un codigo postal valido.
 
+
 ##Despliegue 
 Para probar el funcionamiento de la pasarela de pago , el front se encuentra desplegado a traves del servicio gratuito de firebase hosting 
 
